@@ -1,0 +1,464 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local adminlabel = Instance.new("TextLabel")
+local welcomelabel = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local cmdFrame = Instance.new("Frame")
+local cmdlabel = Instance.new("TextLabel")
+local flyButton = Instance.new("TextButton")
+local unflyButton = Instance.new("TextButton")
+local noclipButton = Instance.new("TextButton")
+local unnoclipButton = Instance.new("TextButton")
+local unwalkspeed = Instance.new("TextButton")
+local walkspeed = Instance.new("TextButton")
+local exitButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.0790378004, 0, 0.270100504, 0)
+main.Size = UDim2.new(0, 630, 0, 399)
+main.Active = true
+
+adminlabel.Name = "adminlabel"
+adminlabel.Parent = main
+adminlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+adminlabel.BackgroundTransparency = 1.000
+adminlabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+adminlabel.BorderSizePixel = 0
+adminlabel.Position = UDim2.new(0.138095245, 0, 0, 0)
+adminlabel.Size = UDim2.new(0, 200, 0, 50)
+adminlabel.Font = Enum.Font.FredokaOne
+adminlabel.Text = "EscX Admin Panel"
+adminlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+adminlabel.TextSize = 50.000
+
+welcomelabel.Name = "welcomelabel"
+welcomelabel.Parent = main
+welcomelabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+welcomelabel.BackgroundTransparency = 1.000
+welcomelabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+welcomelabel.BorderSizePixel = 0
+welcomelabel.Position = UDim2.new(0.0174603183, 0, 0.190476194, 0)
+welcomelabel.Size = UDim2.new(0, 200, 0, 50)
+welcomelabel.Font = Enum.Font.FredokaOne
+welcomelabel.Text = "Welcome,"
+welcomelabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+welcomelabel.TextSize = 50.000
+
+TextLabel.Parent = main
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0317460336, 0, 0.315789461, 0)
+TextLabel.Size = UDim2.new(0, 267, 0, 50)
+TextLabel.Font = Enum.Font.Jura
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 50.000
+
+cmdFrame.Name = "cmdFrame"
+cmdFrame.Parent = main
+cmdFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+cmdFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+cmdFrame.BorderSizePixel = 0
+cmdFrame.Position = UDim2.new(0.0174603183, 0, 0.50626564, 0)
+cmdFrame.Size = UDim2.new(0, 610, 0, 187)
+cmdFrame.Active = true
+
+cmdlabel.Name = "cmdlabel"
+cmdlabel.Parent = cmdFrame
+cmdlabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+cmdlabel.BackgroundTransparency = 1.000
+cmdlabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+cmdlabel.BorderSizePixel = 0
+cmdlabel.Position = UDim2.new(0.334426224, 0, 0, 0)
+cmdlabel.Size = UDim2.new(0, 200, 0, 27)
+cmdlabel.Font = Enum.Font.SourceSans
+cmdlabel.Text = "Commands"
+cmdlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+cmdlabel.TextSize = 30.000
+
+flyButton.Name = "flyButton"
+flyButton.Parent = cmdFrame
+flyButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+flyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+flyButton.BorderSizePixel = 0
+flyButton.Position = UDim2.new(0.0245901644, 0, 0.21390374, 0)
+flyButton.Size = UDim2.new(0, 154, 0, 40)
+flyButton.Font = Enum.Font.SourceSans
+flyButton.Text = "Fly"
+flyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+flyButton.TextSize = 14.000
+
+unflyButton.Name = "unflyButton"
+unflyButton.Parent = cmdFrame
+unflyButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+unflyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+unflyButton.BorderSizePixel = 0
+unflyButton.Position = UDim2.new(0.0245901644, 0, 0.647058845, 0)
+unflyButton.Size = UDim2.new(0, 154, 0, 40)
+unflyButton.Font = Enum.Font.SourceSans
+unflyButton.Text = "Unfly"
+unflyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+unflyButton.TextSize = 14.000
+
+noclipButton.Name = "noclipButton"
+noclipButton.Parent = cmdFrame
+noclipButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+noclipButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+noclipButton.BorderSizePixel = 0
+noclipButton.Position = UDim2.new(0.372131139, 0, 0.21390374, 0)
+noclipButton.Size = UDim2.new(0, 154, 0, 40)
+noclipButton.Font = Enum.Font.SourceSans
+noclipButton.Text = "Noclip"
+noclipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+noclipButton.TextSize = 14.000
+
+unnoclipButton.Name = "unnoclipButton"
+unnoclipButton.Parent = cmdFrame
+unnoclipButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+unnoclipButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+unnoclipButton.BorderSizePixel = 0
+unnoclipButton.Position = UDim2.new(0.372131139, 0, 0.647058845, 0)
+unnoclipButton.Size = UDim2.new(0, 154, 0, 40)
+unnoclipButton.Font = Enum.Font.SourceSans
+unnoclipButton.Text = "Unnoclip"
+unnoclipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+unnoclipButton.TextSize = 14.000
+
+unwalkspeed.Name = "unwalkspeed"
+unwalkspeed.Parent = cmdFrame
+unwalkspeed.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+unwalkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+unwalkspeed.BorderSizePixel = 0
+unwalkspeed.Position = UDim2.new(0.72131145, 0, 0.647058845, 0)
+unwalkspeed.Size = UDim2.new(0, 154, 0, 40)
+unwalkspeed.Font = Enum.Font.SourceSans
+unwalkspeed.Text = "Unwalkspeed 50"
+unwalkspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+unwalkspeed.TextSize = 14.000
+
+walkspeed.Name = "walkspeed"
+walkspeed.Parent = cmdFrame
+walkspeed.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+walkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+walkspeed.BorderSizePixel = 0
+walkspeed.Position = UDim2.new(0.72131145, 0, 0.21390374, 0)
+walkspeed.Size = UDim2.new(0, 154, 0, 40)
+walkspeed.Font = Enum.Font.SourceSans
+walkspeed.Text = "Walkspeed 50"
+walkspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+walkspeed.TextSize = 14.000
+
+exitButton.Name = "exitButton"
+exitButton.Parent = main
+exitButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+exitButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+exitButton.BorderSizePixel = 0
+exitButton.Position = UDim2.new(0.922222197, 0, 0, 0)
+exitButton.Size = UDim2.new(0, 49, 0, 50)
+exitButton.Font = Enum.Font.FredokaOne
+exitButton.Text = "X"
+exitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+exitButton.TextSize = 50.000
+
+-- Scripts:
+
+local function NDZMK_fake_script() -- TextLabel.showNameScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	-- Get the local player
+	local player = game.Players.LocalPlayer
+	
+	-- script.Parent is the TextLabel itself
+	script.Parent.Text = player.Name
+	
+end
+coroutine.wrap(NDZMK_fake_script)()
+local function XLIY_fake_script() -- flyButton.flyScript 
+	local script = Instance.new('LocalScript', flyButton)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	local speed = 50 -- adjust flying speed
+	
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	-- Track key states
+	local keys = {
+		W = false,
+		A = false,
+		S = false,
+		D = false,
+		Space = false,
+		LeftShift = false
+	}
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if keys[input.KeyCode.Name] ~= nil then
+			keys[input.KeyCode.Name] = true
+		end
+	end)
+	
+	UserInputService.InputEnded:Connect(function(input, gameProcessed)
+		if keys[input.KeyCode.Name] ~= nil then
+			keys[input.KeyCode.Name] = false
+		end
+	end)
+	
+	-- Use an Attribute on the player to track flying
+	if not player:GetAttribute("Flying") then
+		player:SetAttribute("Flying", false)
+	end
+	
+	button.MouseButton1Click:Connect(function()
+		if player:GetAttribute("Flying") then return end
+		player:SetAttribute("Flying", true)
+	
+		local character = player.Character
+		if not character then return end
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		-- Create BodyVelocity
+		local bodyVelocity = Instance.new("BodyVelocity")
+		bodyVelocity.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+		bodyVelocity.Velocity = Vector3.new(0,0,0)
+		bodyVelocity.Name = "FlyVelocity"
+		bodyVelocity.Parent = hrp
+	
+		local conn
+		conn = RunService.RenderStepped:Connect(function()
+			if not player:GetAttribute("Flying") or not hrp.Parent then
+				bodyVelocity:Destroy()
+				conn:Disconnect()
+				return
+			end
+	
+			local move = Vector3.new()
+			local cam = workspace.CurrentCamera
+	
+			if keys.W then move = move + cam.CFrame.LookVector end
+			if keys.S then move = move - cam.CFrame.LookVector end
+			if keys.A then move = move - cam.CFrame.RightVector end
+			if keys.D then move = move + cam.CFrame.RightVector end
+			if keys.Space then move = move + Vector3.new(0,1,0) end
+			if keys.LeftShift then move = move - Vector3.new(0,1,0) end
+	
+			if move.Magnitude > 0 then
+				bodyVelocity.Velocity = move.Unit * speed
+			else
+				bodyVelocity.Velocity = Vector3.new(0,0,0)
+			end
+		end)
+	end)
+	
+end
+coroutine.wrap(XLIY_fake_script)()
+local function ORRFH_fake_script() -- unflyButton.unflyScript 
+	local script = Instance.new('LocalScript', unflyButton)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	
+	button.MouseButton1Click:Connect(function()
+		player:SetAttribute("Flying", false)
+	
+		local character = player.Character
+		if not character then return end
+		local hrp = character:FindFirstChild("HumanoidRootPart")
+		if hrp then
+			local bodyVelocity = hrp:FindFirstChild("FlyVelocity")
+			if bodyVelocity then
+				bodyVelocity:Destroy()
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(ORRFH_fake_script)()
+local function XCGJ_fake_script() -- noclipButton.noclipScript 
+	local script = Instance.new('LocalScript', noclipButton)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	local RunService = game:GetService("RunService")
+	
+	-- Use Attribute to track state
+	if player:GetAttribute("Noclip") == nil then
+		player:SetAttribute("Noclip", false)
+	end
+	
+	local noclipConnection
+	
+	button.MouseButton1Click:Connect(function()
+		if player:GetAttribute("Noclip") then return end
+		player:SetAttribute("Noclip", true)
+	
+		local character = player.Character
+		if not character then return end
+	
+		-- Disconnect any old connection just in case
+		if noclipConnection then
+			noclipConnection:Disconnect()
+		end
+	
+		noclipConnection = RunService.Stepped:Connect(function()
+			if not player:GetAttribute("Noclip") then
+				-- Restore CanCollide to normal
+				for _, part in ipairs(character:GetDescendants()) do
+					if part:IsA("BasePart") then
+						part.CanCollide = true
+					end
+				end
+				noclipConnection:Disconnect()
+				return
+			end
+	
+			-- Disable collision for walls (any part not touching floor)
+			for _, part in ipairs(character:GetDescendants()) do
+				if part:IsA("BasePart") then
+					-- Only disable collisions if touching something vertical (not the floor)
+					-- Simple heuristic: if the part is roughly above Y=0, consider it floor, else wall
+					if part.Position.Y > 1 then
+						part.CanCollide = false
+					end
+				end
+			end
+		end)
+	end)
+	
+end
+coroutine.wrap(XCGJ_fake_script)()
+local function TLGYNSS_fake_script() -- unnoclipButton.unnoclipScript 
+	local script = Instance.new('LocalScript', unnoclipButton)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	
+	button.MouseButton1Click:Connect(function()
+		player:SetAttribute("Noclip", false)
+		local character = player.Character
+		if not character then return end
+	
+		for _, part in ipairs(character:GetDescendants()) do
+			if part:IsA("BasePart") then
+				part.CanCollide = true
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(TLGYNSS_fake_script)()
+local function ECFWO_fake_script() -- unwalkspeed.unwalkspeedScript 
+	local script = Instance.new('LocalScript', unwalkspeed)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	
+	button.MouseButton1Click:Connect(function()
+		if not player:GetAttribute("CustomWalkSpeed") then return end -- not active
+		player:SetAttribute("CustomWalkSpeed", false)
+	
+		local character = player.Character
+		if not character then return end
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid then
+			humanoid.WalkSpeed = 16 -- default Roblox walkspeed
+		end
+	end)
+	
+end
+coroutine.wrap(ECFWO_fake_script)()
+local function THTWT_fake_script() -- walkspeed.walkspeedScript 
+	local script = Instance.new('LocalScript', walkspeed)
+
+	local button = script.Parent
+	local player = game.Players.LocalPlayer
+	
+	-- Track custom walkspeed
+	if player:GetAttribute("CustomWalkSpeed") == nil then
+		player:SetAttribute("CustomWalkSpeed", false)
+	end
+	
+	button.MouseButton1Click:Connect(function()
+		if player:GetAttribute("CustomWalkSpeed") then return end -- already active
+		player:SetAttribute("CustomWalkSpeed", true)
+	
+		local character = player.Character
+		if not character then return end
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid then
+			humanoid.WalkSpeed = 50
+		end
+	end)
+	
+end
+coroutine.wrap(THTWT_fake_script)()
+local function EEPQA_fake_script() -- main.dragScript 
+	local script = Instance.new('LocalScript', main)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(EEPQA_fake_script)()
+local function NPKTJ_fake_script() -- exitButton.exitScript 
+	local script = Instance.new('LocalScript', exitButton)
+
+	local button = script.Parent
+	local main = button.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		main.Visible = false
+	end)
+end
+coroutine.wrap(NPKTJ_fake_script)()
