@@ -405,7 +405,7 @@ local function THTWT_fake_script() -- walkspeed.walkspeedScript
 		if not character then return end
 		local humanoid = character:FindFirstChildOfClass("Humanoid")
 		if humanoid then
-			humanoid.WalkSpeed = 50
+			humanoid.WalkSpeed = 100
 		end
 	end)
 	
