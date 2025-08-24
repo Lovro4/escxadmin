@@ -149,7 +149,7 @@ unwalkspeed.BorderSizePixel = 0
 unwalkspeed.Position = UDim2.new(0.72131145, 0, 0.647058845, 0)
 unwalkspeed.Size = UDim2.new(0, 154, 0, 40)
 unwalkspeed.Font = Enum.Font.SourceSans
-unwalkspeed.Text = "Unwalkspeed 50"
+unwalkspeed.Text = "Unwalkspeed 100"
 unwalkspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
 unwalkspeed.TextSize = 14.000
 
@@ -161,7 +161,7 @@ walkspeed.BorderSizePixel = 0
 walkspeed.Position = UDim2.new(0.72131145, 0, 0.21390374, 0)
 walkspeed.Size = UDim2.new(0, 154, 0, 40)
 walkspeed.Font = Enum.Font.SourceSans
-walkspeed.Text = "Walkspeed 50"
+walkspeed.Text = "Walkspeed 100"
 walkspeed.TextColor3 = Color3.fromRGB(255, 255, 255)
 walkspeed.TextSize = 14.000
 
